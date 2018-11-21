@@ -5,32 +5,11 @@
 	</head>
 	<body>
 		<?php 
-		$dsn = 'mysql:host=localhost;port=3306;dbname=testdb';
-		
-		$pdo = new PDO($dsn,'root','');
-		$pdo->query("SET NAMES 'utf8'");
-		$sql = "SELECT * FROM table1";
-		$query = $pdo->query($sql);
-		$query->setFetchMode(PDO::FETCH_ASSOC);
-		foreach($query as $row){
-			echo $row['COL 1'];
-			echo ',';
-			echo $row['COL 2'];
-			echo ',';
-			echo $row['COL 3'];
-			echo ',';
-			echo $row['COL 4'];
-			echo ',';
-			echo $row['COL 5'];
-			echo ',';
-			echo $row['COL 6'];
-			echo ',';
-			echo $row['COL 7'];
-			echo ',';
-			echo $row['COL 8'];
-			echo ',';
-			echo $row['COL 9'].'<br>';
-		}
-	?>
+			$dbhost = 'localhost';
+			$dbuser = 'root';
+			$dbpass = '';
+			$dbname = 'testdb';
+			$mysqli = new mysqli($dbhost,$dbuser,$dbpass,$dbname);
+		?>
 	</body>
 </html>
