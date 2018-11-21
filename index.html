@@ -10,6 +10,14 @@
 			$dbpass = '';
 			$dbname = 'testdb';
 			$mysqli = new mysqli($dbhost,$dbuser,$dbpass,$dbname);
+			$mysqli->query("SET NAMES utf8");
+			
+			$sql = "SELECT * FROM table 1"
+			if($stmt = $db->query($sql)){
+				while($result = mysqli_fetch_object($stmt)){
+					echo '<p>ID： '.$result->COLa.'，Age：'.$result->COLb.'，Gender：'.$result->COLc.'，Family：'.$result->COLd.'，Career：'.$result->COLe.'，Edu：'.$result->COLf.'，Marry：'.$result->COLg.'，Child：'.$result->COLh.'，Income：'.$result->COLi.'</p>';
+				}
+			}
 		?>
 	</body>
 </html>
